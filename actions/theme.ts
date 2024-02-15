@@ -2,7 +2,6 @@
 
 import { cookies } from "next/headers";
 import { Themes } from "@components/Providers/ThemeProvider";
-import saParser from "@helpers/saParser";
 
 export const setThemeCookies = (theme: Themes) => {
   const themeCookies = cookies();
