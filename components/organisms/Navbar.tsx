@@ -23,11 +23,11 @@ const Navbar: React.FC<NavbarProps> = (props) => {
   const { lang } = props;
   return (
     <nav className='w-full'>
-      <div className='flex items-center pb-4 border-b dark:border-shark-700 max-w-6xl mx-auto flex-row justify-between'>
+      <div className='flex md:items-center py-2 md:py-0 pb-4 border-b dark:border-shark-700 max-w-6xl mx-auto flex-col gap-4 md:flex-row justify-between'>
         <div>
           <Profile lang={lang} />
         </div>
-        <div className='flex flex-row gap-4'>
+        <div className='flex flex-row gap-2 md:gap-4'>
           <ToggleLanguage lang={lang} />
           <ToggleTheme lang={lang} />
         </div>
@@ -49,10 +49,10 @@ const Profile: React.FC<{ lang: Langs }> = (props) => {
         className='object-cover rounded-full object-center h-8 w-8'
       />
       <div>
-        <h1 className='text-sm font-bold dark:text-shark-50'>
+        <h1 className='md:text-sm text-xs font-bold dark:text-shark-50'>
           Satil Pereira
         </h1>
-        <p className='text-xs dark:text-shark-300'>
+        <p className='md:text-xs text-[10px] dark:text-shark-300'>
           {lang === "en"
             ? "Software Engineer & Designer"
             : "Engenheiro de Software & Designer"}
@@ -73,7 +73,7 @@ const NavButton: React.FC<
     <Button
       {...rest}
       lang={lang}
-      className='flex text-xs dark:text-shark-300 dark:border-shark-800 dark:bg-shark-700 items-center border h-fit flex-row gap-2 py-1 px-3 rounded-md'
+      className='flex min-w-[120px] w-full md:w-fit text-xs dark:text-shark-300 dark:border-shark-800 dark:bg-shark-700 items-center border h-fit flex-row gap-2 py-1 px-3 rounded-md'
     >
       {children}
     </Button>

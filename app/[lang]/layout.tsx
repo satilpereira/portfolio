@@ -14,7 +14,7 @@ const Layout = ({
   return (
     <main
       className={cn(
-        "p-4 w-full bg-zircon-50 items-center justify-center flex flex-col text-shark-900 dark:text-shark-50 dark:bg-bunker-950"
+        "p-2 md:p-4 w-full bg-zircon-50 items-center justify-center flex flex-col text-shark-900 dark:text-shark-50 dark:bg-bunker-950"
       )}
     >
       <Navbar lang={params.lang} />
