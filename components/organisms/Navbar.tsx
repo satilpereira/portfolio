@@ -22,8 +22,8 @@ type NavbarProps = {
 const Navbar: React.FC<NavbarProps> = (props) => {
   const { lang } = props;
   return (
-    <nav className=''>
-      <div className='flex pb-4 border-b border-shark-700 max-w-6xl mx-auto flex-row justify-between'>
+    <nav className='w-full'>
+      <div className='flex items-center pb-4 border-b dark:border-shark-700 max-w-6xl mx-auto flex-row justify-between'>
         <div>
           <Profile lang={lang} />
         </div>
@@ -73,7 +73,7 @@ const NavButton: React.FC<
     <Button
       {...rest}
       lang={lang}
-      className='flex text-xs dark:text-shark-300 dark:border-shark-800 dark:bg-shark-700 items-center border flex-row gap-2 py-1 px-3 rounded-md'
+      className='flex text-xs dark:text-shark-300 dark:border-shark-800 dark:bg-shark-700 items-center border h-fit flex-row gap-2 py-1 px-3 rounded-md'
     >
       {children}
     </Button>
