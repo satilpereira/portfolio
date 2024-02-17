@@ -3,7 +3,7 @@ import GridItem from "@components/molecules/GridItem";
 
 const AboutMe = () => {
   return (
-    <GridItem>
+    <GridItem title='AboutMe'>
       <h1>About Me</h1>
     </GridItem>
   );

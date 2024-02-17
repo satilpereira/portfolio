@@ -1,7 +1,7 @@
 import React from "react";
 
-interface SocialCardProps {
-  icon: string;
+export interface SocialCardProps {
+  icon: React.ReactNode;
   title: string;
   url: string;
 }
@@ -17,9 +17,10 @@ const SocialCard: React.FC<
       {...rest}
       target='_blank'
       rel='noopener noreferrer'
-      className='flex items-center justify-center p-4 space-x-2 text-white bg-gray-800 rounded-md'
+      className='flex items-center text-[10px] md:p-2 md:text-sm justify-start p-1 space-x-2 dark:bg-shark-700 dark:text-shark-300 rounded-md hover:dark:bg-shark-600 hover:dark:text-shark-200 transition-all duration-300 ease-in-out'
     >
-      SocialCard
+      <div>{icon}</div>
+      <div>{title}</div>
     </a>
   );
 };

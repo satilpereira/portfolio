@@ -23,7 +23,7 @@ const Navbar: React.FC<NavbarProps> = (props) => {
   const { lang } = props;
   return (
     <nav className='w-full'>
-      <div className='flex md:items-center py-2 md:pt-0 pb-4 border-b dark:border-shark-700 max-w-6xl mx-auto flex-col gap-4 md:flex-row justify-between'>
+      <div className='flex md:items-center py-2 md:pt-0 pb-4 border-b border-shark-500/30 dark:border-shark-700 max-w-6xl mx-auto flex-col gap-4 md:flex-row justify-between'>
         <div>
           <Profile lang={lang} />
         </div>

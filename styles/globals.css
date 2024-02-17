@@ -1,4 +1,41 @@
 /* Tailwind imports */
 @tailwind base;
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #c1cad4;
+  border-radius: 1px;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 1px;
+  background-color: #7f92a5;
+  border: 1px solid #c1cad4;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #61768b;
+  border: 1px solid #c1cad4;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #333e49;
+  border-radius: 1px;
+}
+
+.dark *::-webkit-scrollbar-thumb {
+  background-color: #1c2228;
+  border: 1px solid #333e49;
+}
+
+.dark *::-webkit-scrollbar-thumb:hover {
+  background-color: #22282e;
+  border: 1px solid #333e49;
+}
+
 @tailwind components;
 @tailwind utilities;

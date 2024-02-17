@@ -3,7 +3,7 @@ import GridItem from "@components/molecules/GridItem";
 
 const YearsPro = () => {
   return (
-    <GridItem>
+    <GridItem title='YearsPro'>
       <h1>YearsPro</h1>
     </GridItem>
   );
