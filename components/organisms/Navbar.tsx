@@ -49,10 +49,10 @@ const Profile: React.FC<{ lang: Langs }> = (props) => {
         className='object-cover rounded-full object-center h-8 w-8'
       />
       <div>
-        <h1 className='md:text-sm text-xs font-bold dark:text-shark-50'>
+        <h1 className='md:text-sm text-xs font-bold text-shark-700 dark:text-shark-50'>
           Satil Pereira
         </h1>
-        <p className='md:text-xs text-[10px] dark:text-shark-300'>
+        <p className='md:text-xs text-[10px] text-shark-500 dark:text-shark-300'>
           {lang === "en"
             ? "Software Engineer & Designer"
             : "Engenheiro de Software & Designer"}

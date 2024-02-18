@@ -25,7 +25,7 @@ const GridItem: React.FC<GridItemProps> = (props) => {
     <div className='w-full flex flex-col h-full bg-zircon-100/30 border-shark-500/30 dark:bg-shark-800 rounded-lg dark:border-shark-700 border py-2 pl-2'>
       <h2
         className={cn(
-          "border-b leading-[1] transition-all duration-300 border-b-shark-500/30 dark:border-b-shark-700 pb-2 mb-2 mr-2",
+          "border-b leading-[1] transition-all duration-300 text-shark-700 dark:text-shark-50 border-b-shark-500/30 dark:border-b-shark-700 pb-2 mb-2 mr-2",
           {
             "mr-5": hasScrollbar,
           }
