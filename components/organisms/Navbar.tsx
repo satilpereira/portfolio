@@ -102,7 +102,7 @@ const ToggleTheme: React.FC<{ lang: Langs }> = (props) => {
   const { lang } = props;
   const { theme, setTheme } = useThemeContext();
   const themeText =
-    lang === "en" ? theme : theme === "dark" ? "Escuro" : "Claro";
+    lang === "en" ? theme : theme === "dark" ? "escuro" : "claro";
 
   return (
     <NavButton
