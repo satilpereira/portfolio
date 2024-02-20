@@ -28,16 +28,20 @@ const ThemeProvider = ({
   const [theme, setTheme] = useState<Themes>("dark");
 
   useEffect(() => {
-    (async () => {
-      const themeCookies = await getThemeCookies();
-      if (themeCookies) {
-        setTheme(themeCookies);
-      }
-    })();
+    // (async () => {
+    //   const themeCookies = await getThemeCookies();
+    //   if (themeCookies) {
+    //     setTheme(themeCookies);
+    //   }
+    // })();
+    localStorage.getItem("theme") &&
+      setTheme(localStorage.getItem("theme") as Themes);
   }, []);
 
   useEffect(() => {
-    setThemeCookies(theme);
+    document.documentElement.setAttribute("data-theme", theme);
+    // setThemeCookies(theme);
+    localStorage.setItem("theme", theme);
     console.log(theme);
   }, [theme]);
 

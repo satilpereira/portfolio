@@ -2,7 +2,7 @@ import ThemeProvider from "@components/Providers/ThemeProvider";
 import "@styles/globals.css";
 import { GeistSans } from "geist/font/sans";
 import { getThemeCookies } from "@actions/theme";
-
+import Body from "@components/atoms/Body";
 import cn from "@utils/cn";
 
 export const metadata = {
@@ -33,13 +33,9 @@ const Layout = async ({
 
   return (
     <html lang='pt-BR' className={GeistSans.className}>
-      <body
-        className={cn("flex min-h-[100svh]", {
-          dark: theme === "dark",
-        })}
-      >
-        <ThemeProvider>{children}</ThemeProvider>
-      </body>
+      <ThemeProvider>
+        <Body>{children}</Body>
+      </ThemeProvider>
     </html>
   );
 };
