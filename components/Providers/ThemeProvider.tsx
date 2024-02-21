@@ -25,18 +25,22 @@ const ThemeProvider = ({
 }: {
   children: React.ReactNode;
 }) => {
-  const [theme, setTheme] = useState<Themes>("dark");
+  const [theme, setTheme] = useState<Themes>(
+    (localStorage.getItem("theme") as Themes) || "dark"
+  );
 
-  useEffect(() => {
-    // (async () => {
-    //   const themeCookies = await getThemeCookies();
-    //   if (themeCookies) {
-    //     setTheme(themeCookies);
-    //   }
-    // })();
-    localStorage.getItem("theme") &&
-      setTheme(localStorage.getItem("theme") as Themes);
-  }, []);
+  // useEffect(() => {
+  //   // (async () => {
+  //   //   const themeCookies = await getThemeCookies();
+  //   //   if (themeCookies) {
+  //   //     setTheme(themeCookies);
+  //   //   }
+  //   // })();
+  //   console.log("theme provider mounted");
+  //   console.log(localStorage.getItem("theme"));
+  //   localStorage.getItem("theme") &&
+  //     setTheme(localStorage.getItem("theme") as Themes);
+  // }, []);
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
