@@ -4,6 +4,8 @@ import { GeistSans } from "geist/font/sans";
 import { getThemeCookies } from "@actions/theme";
 import Body from "@components/atoms/Body";
 import cn from "@utils/cn";
+import { headers } from "next/headers";
+import { Langs } from "./[lang]/layout";
 
 export const metadata = {
   title: "portfolio",
@@ -31,8 +33,13 @@ const Layout = async ({
 }) => {
   const theme = await getThemeCookies();
 
+  // Set the language based on the URL
+  const requestUrl = headers().get("x-url");
+  let lang = requestUrl?.split("/")[3];
+  lang = lang === "en" ? "en-US" : "pt-BR";
+
   return (
-    <html lang='pt-BR' className={GeistSans.className}>
+    <html lang={lang} className={GeistSans.className}>
       <ThemeProvider>
         <Body>{children}</Body>
       </ThemeProvider>

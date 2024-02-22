@@ -85,6 +85,10 @@ const ToggleLanguage: React.FC<{ lang: Langs }> = (props) => {
   const router = useRouter();
   const newLang = lang === "en" ? "pt" : "en";
 
+  // Toggle html lang attribute
+  if (typeof document !== "undefined")
+    document.documentElement.lang = lang === "en" ? "en-US" : "pt-BR";
+
   return (
     <NavButton
       lang={lang}

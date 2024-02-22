@@ -25,28 +25,17 @@ const ThemeProvider = ({
 }: {
   children: React.ReactNode;
 }) => {
-  const [theme, setTheme] = useState<Themes>(
-    (localStorage.getItem("theme") as Themes) || "dark"
-  );
+  const [theme, setTheme] = useState<Themes>("dark");
 
-  // useEffect(() => {
-  //   // (async () => {
-  //   //   const themeCookies = await getThemeCookies();
-  //   //   if (themeCookies) {
-  //   //     setTheme(themeCookies);
-  //   //   }
-  //   // })();
-  //   console.log("theme provider mounted");
-  //   console.log(localStorage.getItem("theme"));
-  //   localStorage.getItem("theme") &&
-  //     setTheme(localStorage.getItem("theme") as Themes);
-  // }, []);
+  useEffect(() => {
+    localStorage.getItem("theme") &&
+      setTheme(localStorage.getItem("theme") as Themes);
+  }, []);
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
     // setThemeCookies(theme);
     localStorage.setItem("theme", theme);
-    console.log(theme);
   }, [theme]);
 
   return (

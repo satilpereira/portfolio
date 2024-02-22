@@ -1,6 +1,7 @@
 import cn from "@utils/cn";
 import Navbar from "@components/organisms/Navbar";
 import Footer from "@components/organisms/Footer";
+import { headers } from "next/headers";
 
 export type Langs = "en" | "pt";
 
