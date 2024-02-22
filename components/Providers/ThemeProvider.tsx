@@ -27,6 +27,12 @@ const ThemeProvider = ({
 }) => {
   const [theme, setTheme] = useState<Themes>("dark");
 
+  // Memoize the context value to avoid unnecessary re-renders
+  const contextValue = useMemo(
+    () => ({ theme, setTheme }),
+    [theme, setTheme]
+  );
+
   useEffect(() => {
     localStorage.getItem("theme") &&
       setTheme(localStorage.getItem("theme") as Themes);
@@ -39,7 +45,7 @@ const ThemeProvider = ({
   }, [theme]);
 
   return (
-    <ThemeContext.Provider value={{ theme, setTheme }}>
+    <ThemeContext.Provider value={{ ...contextValue }}>
       {children}
     </ThemeContext.Provider>
   );
