@@ -36,9 +36,12 @@ const GridItem: React.FC<GridItemProps> = (props) => {
       <div
         ref={scrollRef}
         id={title}
-        className={cn("h-full overflow-auto pr-2", {
-          "overflow-y-scroll": hasScrollbar,
-        })}
+        className={cn(
+          "h-full aspect-square md:aspect-auto overflow-auto pr-2",
+          {
+            "overflow-y-scroll": hasScrollbar,
+          }
+        )}
       >
         {children}
       </div>
