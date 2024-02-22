@@ -40,6 +40,21 @@ const ThemeProvider = ({
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
+
+    if (window.matchMedia) {
+      // Check if the dark-mode Media-Query matches
+      if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        // Dark
+        setTheme("dark");
+      } else {
+        // Light
+        setTheme("light");
+      }
+    } else {
+      setTheme("dark");
+      // Default (when Media-Queries are not supported)
+    }
+
     // setThemeCookies(theme);
     localStorage.setItem("theme", theme);
   }, [theme]);
