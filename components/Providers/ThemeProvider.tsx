@@ -34,13 +34,6 @@ const ThemeProvider = ({
   );
 
   useEffect(() => {
-    localStorage.getItem("theme") &&
-      setTheme(localStorage.getItem("theme") as Themes);
-  }, []);
-
-  useEffect(() => {
-    document.documentElement.setAttribute("data-theme", theme);
-
     if (window.matchMedia) {
       // Check if the dark-mode Media-Query matches
       if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
@@ -54,6 +47,13 @@ const ThemeProvider = ({
       setTheme("dark");
       // Default (when Media-Queries are not supported)
     }
+
+    localStorage.getItem("theme") &&
+      setTheme(localStorage.getItem("theme") as Themes);
+  }, []);
+
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme);
 
     // setThemeCookies(theme);
     localStorage.setItem("theme", theme);
