@@ -14,13 +14,14 @@ export default function Page({
 }: {
   params: { lang: "pt" | "en" };
 }) {
+  const lang = params.lang;
   return (
     <section className='max-w-6xl w-full py-4 md:py-8 h-[2090px] md:h-[1100px] xl:h-[764px] mx-auto gap-2 md:gap-4 grid xl:grid-cols-6 xl:grid-rows-4 md:grid-cols-4 md:grid-rows-6 grid-cols-2 grid-rows-[12]'>
       <article className='col-span-2 row-span-2 row-start-2 xl:col-start-1 md:row-start-2 xl:row-start-1 md:col-start-1'>
         <Experiences />
       </article>
       <article className='col-span-1 row-span-1 row-start-1 xl:col-start-3 col-start-1'>
-        <Skills />
+        <Skills lang={lang} />
       </article>
       <article className='col-span-1 row-span-1 row-start-1 xl:col-start-4 col-start-2'>
         <Social />

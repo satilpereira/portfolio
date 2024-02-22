@@ -14,6 +14,7 @@ import Button from "@components/atoms/Button";
 import { BsFillMoonFill } from "react-icons/bs";
 import { BsTranslate } from "react-icons/bs";
 import { BsSun } from "react-icons/bs";
+import Link from "next/link";
 
 type NavbarProps = {
   lang: Langs;
@@ -90,15 +91,14 @@ const ToggleLanguage: React.FC<{ lang: Langs }> = (props) => {
     document.documentElement.lang = lang === "en" ? "en-US" : "pt-BR";
 
   return (
-    <NavButton
+    <Link
+      className='flex w-full md:w-fit text-xs dark:text-shark-300 dark:border-shark-800 dark:bg-shark-700 items-center border h-fit flex-row gap-2 py-1 px-3 rounded-md'
+      href={`/${newLang}`}
       lang={lang}
-      onClick={() => {
-        router.push(`/${newLang}`);
-      }}
     >
       {lang === "en" ? "pt" : "en"}
       <BsTranslate />
-    </NavButton>
+    </Link>
   );
 };
 
