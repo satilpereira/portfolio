@@ -31,18 +31,6 @@ const Navbar: React.FC<NavbarProps> = (props) => {
           <Profile lang={lang} />
         </div>
         <div className='flex flex-row gap-2 md:gap-4'>
-          <div>
-            <button
-              onClick={() => {
-                const theme = useTheme.getState().theme;
-                useTheme.setState({
-                  theme: theme === "dark" ? "light" : "dark",
-                });
-              }}
-            >
-              Toggle Theme: {myTheme}
-            </button>
-          </div>
           <ToggleLanguage lang={lang} />
           <ToggleTheme lang={lang} />
         </div>
