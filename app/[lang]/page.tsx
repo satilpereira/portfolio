@@ -33,7 +33,7 @@ export default function Page({
         <Featured />
       </article>
       <article className='col-span-2 row-span-2 xl:col-start-1 xl:row-start-3 md:col-start-3 md:row-start-4 row-start-10 col-start-1'>
-        <AboutMe />
+        <AboutMe lang={lang} />
       </article>
       <article className='col-span-1 row-span-1 row-start-[12] xl:row-start-4 xl:col-start-3 md:col-start-3 md:row-start-6'>
         <YearsPro />

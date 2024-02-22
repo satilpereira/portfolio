@@ -9,6 +9,7 @@ import Image from "next/image";
 // Custom components and types
 import { Langs } from "@app/[lang]/layout";
 import Button from "@components/atoms/Button";
+import { useTheme } from "@components/Providers/Zustand";
 
 // Icons
 import { BsFillMoonFill } from "react-icons/bs";
@@ -22,6 +23,7 @@ type NavbarProps = {
 
 const Navbar: React.FC<NavbarProps> = (props) => {
   const { lang } = props;
+  const myTheme = useTheme((state) => state.theme);
   return (
     <nav className='w-full'>
       <div className='flex md:items-center py-2 md:pt-0 pb-4 border-b border-shark-500/30 dark:border-shark-700 max-w-6xl mx-auto flex-col gap-4 md:flex-row justify-between'>
@@ -29,6 +31,18 @@ const Navbar: React.FC<NavbarProps> = (props) => {
           <Profile lang={lang} />
         </div>
         <div className='flex flex-row gap-2 md:gap-4'>
+          <div>
+            <button
+              onClick={() => {
+                const theme = useTheme.getState().theme;
+                useTheme.setState({
+                  theme: theme === "dark" ? "light" : "dark",
+                });
+              }}
+            >
+              Toggle Theme: {myTheme}
+            </button>
+          </div>
           <ToggleLanguage lang={lang} />
           <ToggleTheme lang={lang} />
         </div>

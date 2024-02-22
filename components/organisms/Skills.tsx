@@ -4,36 +4,28 @@ import skills from "@content/skills";
 import { Langs } from "@app/[lang]/layout";
 import cn from "@utils/cn";
 
-interface SkillsProps {
+export interface ComponentLangProps {
   lang: Langs;
 }
 
+interface SkillsProps extends ComponentLangProps {}
+
 const Skills: React.FC<SkillsProps> = (props) => {
   const { lang } = props;
+
+  // Get a string with all the skills
+  const skillsString = skills[lang].join(" • ");
+
   return (
     <GridItem title={lang === "en" ? "Skills" : "Habilidades"}>
       <ul
         className={cn(
-          "flex flex-wrap gap-1 text-[10px] dark:text-shark-300 text-shark-700"
+          "flex flex-wrap gap-1 text-xs dark:text-shark-300 text-shark-700"
         )}
       >
-        {skills[lang].map((skill, index) => (
-          <>
-            <li className='leading-[1.5]' key={skill + Math.random()}>
-              {skill}
-            </li>
-            {index < skills[lang].length - 1 && (
-              <li
-                className='leading-[1.5]'
-                key={skill + Math.random()}
-              >
-                <span className='text-shark-500 dark:text-shark-300'>
-                  •
-                </span>
-              </li>
-            )}
-          </>
-        ))}
+        <p className={cn("hyphens-auto leading-[1.5]")}>
+          {skillsString}
+        </p>
       </ul>
     </GridItem>
   );
