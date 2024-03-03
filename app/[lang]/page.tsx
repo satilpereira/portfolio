@@ -36,7 +36,7 @@ export default function Page({
         <AboutMe lang={lang} />
       </article>
       <article className='col-span-1 row-span-1 row-start-[12] xl:row-start-4 xl:col-start-3 md:col-start-3 md:row-start-6'>
-        <YearsPro />
+        <YearsPro lang={lang} />
       </article>
       <article className='col-span-1 row-span-1 row-start-[12] xl:row-start-4 xl:col-start-4 md:col-start-4 md:row-start-6'>
         <Awards />

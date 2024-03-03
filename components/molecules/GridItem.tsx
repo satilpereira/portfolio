@@ -3,14 +3,14 @@
 import React, { useEffect, useRef } from "react";
 import cn from "@utils/cn";
 
-interface GridItemProps {
+interface GridItemProps extends React.HTMLAttributes<HTMLDivElement> {
   title: string;
   children: React.ReactNode;
 }
 
 const GridItem: React.FC<GridItemProps> = (props) => {
   const scrollRef = useRef<HTMLDivElement>(null);
-  const { title, children } = props;
+  const { title, className, children } = props;
   const [hasScrollbar, setHasScrollbar] = React.useState(false);
 
   // Check if the title container has a scrollbar
@@ -26,6 +26,7 @@ const GridItem: React.FC<GridItemProps> = (props) => {
       <h2
         className={cn(
           "border-b leading-[1] transition-all duration-300 text-shark-700 dark:text-shark-50 border-b-shark-500/30 dark:border-b-shark-700 pb-2 mb-2 mr-2",
+          className,
           {
             "mr-5": hasScrollbar,
           }
