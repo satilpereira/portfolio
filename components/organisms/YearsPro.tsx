@@ -11,7 +11,9 @@ const YearsPro: React.FC<YearsProProps> = ({ lang }) => {
   return (
     <GridItem title={lang == "en" ? "Years Pro" : "Anos Pro"}>
       <div className='grid place-items-center h-full'>
-        <h1 className='text-7xl font-bold'>{yearsPro}+</h1>
+        <h1 className='text-7xl dark:text-shark-300 text-shark-700 font-bold'>
+          {yearsPro}+
+        </h1>
       </div>
     </GridItem>
   );
