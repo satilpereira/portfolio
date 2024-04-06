@@ -5,6 +5,7 @@ import React from "react";
 import { useThemeContext } from "@components/Providers/ThemeProvider";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import Link from "next/link";
 
 // Custom components and types
 import { Langs } from "@app/[lang]/layout";
@@ -15,7 +16,7 @@ import { useTheme } from "@components/Providers/Zustand";
 import { BsFillMoonFill } from "react-icons/bs";
 import { BsTranslate } from "react-icons/bs";
 import { BsSun } from "react-icons/bs";
-import Link from "next/link";
+import { GoDownload } from "react-icons/go";
 
 type NavbarProps = {
   lang: Langs;
@@ -31,6 +32,7 @@ const Navbar: React.FC<NavbarProps> = (props) => {
           <Profile lang={lang} />
         </div>
         <div className='flex flex-row gap-2 md:gap-4'>
+          <DownloadCV lang={lang} />
           <ToggleLanguage lang={lang} />
           <ToggleTheme lang={lang} />
         </div>
@@ -80,6 +82,29 @@ const NavButton: React.FC<
     >
       {children}
     </Button>
+  );
+};
+
+const DownloadCV: React.FC<{ lang: Langs }> = (props) => {
+  const { lang } = props;
+  return (
+    <>
+      {lang === "en" ? (
+        <a href='/assets/docs/resume-en.pdf' download={true}>
+          <NavButton lang={lang}>
+            Download CV
+            <GoDownload />
+          </NavButton>
+        </a>
+      ) : (
+        <a href='/assets/docs/resume.pdf' download={true}>
+          <NavButton lang={lang}>
+            Baixar CV
+            <GoDownload />
+          </NavButton>
+        </a>
+      )}
+    </>
   );
 };
 
