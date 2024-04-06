@@ -42,7 +42,7 @@ export default function Page({
         <Awards lang={lang} />
       </article>
       <article className='col-span-2 row-span-1 col-start-1 row-start-7 xl:row-start-4 xl:col-start-5 md:row-start-6 md:col-start-1'>
-        <Education />
+        <Education lang={lang} />
       </article>
     </section>
   );

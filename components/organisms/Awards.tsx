@@ -11,20 +11,20 @@ const Awards: React.FC<AwardsProps> = ({ lang }) => {
     <GridItem title={lang == "en" ? "Awards" : "Prêmios"}>
       <section className='divide-y divide-shark-600'>
         {awards[lang].map((award, index) => (
-          <div
+          <article
             key={index}
             className={cn("grid grid-cols-1 gap-2", {
               "pt-2": index !== 0,
               "pb-2": index !== awards[lang].length - 1,
             })}
           >
-            <h3 className='text-sm leading-[1] dark:text-shark-300 text-shark-700 font-bold'>
+            <h3 className='text-sm leading-[1.2] dark:text-shark-300 text-shark-700 font-bold'>
               {award.title}
             </h3>
             <p className='text-xs dark:text-shark-400 text-shark-600'>
               {award.description}
             </p>
-          </div>
+          </article>
         ))}
       </section>
     </GridItem>
