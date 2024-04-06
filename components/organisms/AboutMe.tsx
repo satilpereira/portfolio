@@ -9,9 +9,11 @@ const AboutMe: React.FC<AboutMeProps> = (props) => {
   const { lang } = props;
   return (
     <GridItem title={lang === "en" ? "About Me" : "Sobre Mim"}>
-      <p className='text-shark-700 text-sm dark:text-shark-300'>
-        {aboutMe[lang]}
-      </p>
+      <article className='text-shark-700 text-sm dark:text-shark-300 space-y-2'>
+        {aboutMe[lang].map((paragraph, index) => (
+          <p key={index}>{paragraph}</p>
+        ))}
+      </article>
     </GridItem>
   );
 };
