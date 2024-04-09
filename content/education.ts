@@ -35,7 +35,7 @@ const portuguese: Education[] = [
     to: "Presente",
   },
   {
-    title: "Licenciatura em Física • Física",
+    title: "Bacharelado em Física • Física",
     institution: "Universidade de São Paulo",
     from: "2019",
     to: "2019",
