@@ -19,6 +19,7 @@ const Experiences: React.FC<ExperiencesProps> = ({ lang }) => {
       <Accordion className='p-0' variant='splitted'>
         {experiences[lang].map((experience, i) => (
           <AccordionItem
+            key={i}
             classNames={{
               base: "group-[.is-splitted]:shadow-none p-0 group-[.is-splitted]:dark:bg-shark-700/50 group-[.is-splitted]:bg-shark-100/50",
               title:
@@ -64,7 +65,7 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
   return (
     <section className='space-y-2'>
       {experience.details.map((detail, i) => (
-        <article className=''>
+        <article key={i} className=''>
           <header>
             <h4
               key={i}
