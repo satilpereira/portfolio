@@ -5,11 +5,7 @@ import GridItem from "@components/molecules/GridItem";
 import { ComponentLangProps } from "./Skills";
 import experiences from "@content/experiences";
 import { Experience } from "@content/experiences";
-import {
-  Accordion,
-  AccordionItem,
-  AccordionItemProps,
-} from "@nextui-org/react";
+import { Accordion, AccordionItem } from "@nextui-org/react";
 
 type ExperiencesProps = {} & ComponentLangProps;
 
@@ -21,16 +17,17 @@ const Experiences: React.FC<ExperiencesProps> = ({ lang }) => {
           <AccordionItem
             key={i}
             classNames={{
-              base: "group-[.is-splitted]:shadow-none p-0 group-[.is-splitted]:dark:bg-shark-700/50 group-[.is-splitted]:bg-shark-100/50",
+              base: "group-[.is-splitted]:shadow-none p-0 group-[.is-splitted]:dark:bg-shark-700 hover:group-[.is-splitted]:bg-zircon-300/30 group-[.is-splitted]:bg-zircon-200/30 hover:group-[.is-splitted]:dark:bg-shark-600 transition-all",
               title:
                 "text-sm leading-[1.2] dark:text-shark-300 text-shark-700 font-bold ",
               subtitle:
                 "text-xs leading-[1.5] dark:text-shark-400 text-shark-600",
+              indicator: "text-shark-400",
             }}
             aria-label={
               i === 0
                 ? "First experience"
-                : i === length - 1
+                : i === experiences[lang].length - 1
                 ? "Last experience"
                 : "Experience"
             }
