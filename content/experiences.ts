@@ -268,7 +268,7 @@ const portuguese: Experience[] = [
     from: "2018",
     to: "2020",
     brief:
-      "Montageme  manutenção de sistemas de segurança eletrônica",
+      "Montagem e manutenção de sistemas de segurança eletrônica",
     details: [
       {
         title: "Assistente de TI",
