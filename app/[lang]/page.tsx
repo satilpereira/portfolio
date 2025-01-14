@@ -27,10 +27,10 @@ export default function Page({
         <Social />
       </article>
       <article className='col-span-2 row-span-3 col-start-1 row-start-4 xl:row-start-1 xl:col-start-5 md:col-start-3 md:row-start-1'>
-        <Projects />
+        <Projects lang={lang} />
       </article>
       <article className='col-span-2 row-span-2 xl:row-start-2 xl:col-start-3 md:col-start-1 md:row-start-4 row-start-8 col-start-1'>
-        <Featured />
+        <Featured lang={lang} />
       </article>
       <article className='col-span-2 row-span-2 xl:col-start-1 xl:row-start-3 md:col-start-3 md:row-start-4 row-start-10 col-start-1'>
         <AboutMe lang={lang} />
