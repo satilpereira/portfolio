@@ -31,7 +31,7 @@ const Navbar: React.FC<NavbarProps> = (props) => {
         <div>
           <Profile lang={lang} />
         </div>
-        <div className='flex flex-row gap-2 md:gap-4'>
+        <div className='flex flex-row gap-2 md:gap-4 justify-start'>
           <DownloadCV lang={lang} />
           <ToggleLanguage lang={lang} />
           <ToggleTheme lang={lang} />
@@ -59,8 +59,8 @@ const Profile: React.FC<{ lang: Langs }> = (props) => {
         </h1>
         <p className='md:text-xs text-[10px] text-shark-500 dark:text-shark-300'>
           {lang === "en"
-            ? "Software Engineer & Designer"
-            : "Engenheiro de Software & Designer"}
+            ? "Software Engineer"
+            : "Engenheiro de Software"}
         </p>
       </div>
     </div>
@@ -78,7 +78,7 @@ const NavButton: React.FC<
     <Button
       {...rest}
       lang={lang}
-      className='flex w-full md:w-fit text-xs dark:text-shark-300 dark:border-shark-800 dark:bg-shark-700 items-center border h-fit flex-row gap-2 py-1 px-3 rounded-md'
+      className='flex w-fit text-xs dark:text-shark-300 dark:border-shark-800 dark:bg-shark-700 items-center border h-fit flex-row gap-2 py-1 px-3 rounded-md'
     >
       {children}
     </Button>
@@ -88,23 +88,19 @@ const NavButton: React.FC<
 const DownloadCV: React.FC<{ lang: Langs }> = (props) => {
   const { lang } = props;
   return (
-    <>
-      {lang === "en" ? (
-        <a href='/assets/docs/resume-en.pdf' download={true}>
-          <NavButton lang={lang}>
-            Download CV
-            <GoDownload />
-          </NavButton>
-        </a>
-      ) : (
-        <a href='/assets/docs/resume.pdf' download={true}>
-          <NavButton lang={lang}>
-            Baixar CV
-            <GoDownload />
-          </NavButton>
-        </a>
-      )}
-    </>
+    <a
+      href={
+        lang === "en"
+          ? "/assets/docs/resume-en.pdf"
+          : "/assets/docs/resume.pdf"
+      }
+      download
+    >
+      <NavButton lang={lang}>
+        {lang === "en" ? "Download CV" : "Baixar CV"}
+        <GoDownload />
+      </NavButton>
+    </a>
   );
 };
 
@@ -119,7 +115,7 @@ const ToggleLanguage: React.FC<{ lang: Langs }> = (props) => {
 
   return (
     <Link
-      className='flex w-full md:w-fit text-xs dark:text-shark-300 dark:border-shark-800 dark:bg-shark-700 items-center border h-fit flex-row gap-2 py-1 px-3 rounded-md'
+      className='flex w-fit text-xs dark:text-shark-300 dark:border-shark-800 dark:bg-shark-700 items-center border h-fit flex-row gap-2 py-1 px-3 rounded-md'
       href={`/${newLang}`}
       lang={lang}
     >
